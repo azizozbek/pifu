@@ -5,20 +5,22 @@ https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/
 Create a new project with following tutorial:
 https://ddev.readthedocs.io/en/latest/users/project/
 Change following variables in the config.yaml file:
-<code>
+<pre>
     docroot: "public"
     php_version: "8.2"
     webserver_type: apache-fpm
-</code>
+</pre>
 
 Update following variable in the .env file:
-<code>DATABASE_URL=mysql://db:db@db:3306/db?serverVersion=5.7</code>
+<pre>DATABASE_URL=mysql://db:db@db:3306/db?serverVersion=5.7</pre>
+
 After the installation start the ddev and go to into local machine with following command:
-<code>ddev ssh</code>
+<pre>ddev ssh</pre>
 
 Afterwards you can install the Marketplace Project with the tutorial down below.
 If you are using a M1 Apple Macbook you would probably have following error:
 https://stackoverflow.com/questions/68095626/node-sass-with-apple-m1-big-sur-and-arm64
+
 You can install sass with following command:
 <code>yarn add sass</code>
 
