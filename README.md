@@ -13,6 +13,8 @@ Change following variables in the config.yaml file:
 
 Update following variable in the .env file:
 <pre>DATABASE_URL=mysql://db:db@db:3306/db?serverVersion=5.7</pre>
+You can skip following step, because the db already created by ddev
+<pre>bin/console doctrine:database:create</pre>
 
 After the installation start the ddev and go to into local machine with following command:
 <pre>ddev ssh</pre>
