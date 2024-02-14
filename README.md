@@ -24,7 +24,10 @@ If you are using a M1 Apple Macbook you would probably have following error:
 https://stackoverflow.com/questions/68095626/node-sass-with-apple-m1-big-sur-and-arm64
 
 You can install sass with following command:
-<code>yarn add sass</code>
+<pre>
+npm uninstall node-sass
+npm install --save-dev sass
+</pre>
 
 
 
