@@ -29,6 +29,11 @@ npm uninstall node-sass
 npm install --save-dev sass
 </pre>
 
+To create an admin user use following command:
+<pre>
+    bin/console sylius:install:setup
+</pre>
+
 
 
 <p>
