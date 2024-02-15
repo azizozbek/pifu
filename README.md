@@ -34,6 +34,8 @@ To create an admin user use following command:
     bin/console sylius:install:setup
 </pre>
 
+For the creation of a custom model, you have to use SymfonyMakerBundle. Since it has conflicts with php8 use following command to install:
+<pre>composer require symfony/maker-bundle --dev --ignore-platform-req=php -W</pre>
 
 
 <p>
