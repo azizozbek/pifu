@@ -62,4 +62,7 @@ return [
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class => ['all' => true],
     BitBag\SyliusWishlistPlugin\BitBagSyliusWishlistPlugin::class => ['all' => true],
+    Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+    BitBag\OpenMarketplace\Pifu\PaymentBundle\PaymentBundle::class => ['all' => true],
+    Sylius\PayPalPlugin\SyliusPayPalPlugin::class => ['all' => true],
 ];

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="app.sylius_payment" class="Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder">
+            <argument>BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\WordLineGatewayFactory</argument>
+            <tag name="payum.gateway_factory_builder" factory="worldline_payment" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Form\Type\WorldLineGatewayConfigurationType">
+            <tag name="sylius.gateway_configuration_type" type="worldline_payment" label="Wordline Payment" />
+            <tag name="form.type" />
+        </service>
+
+    </services>
+</container>

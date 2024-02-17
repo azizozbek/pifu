@@ -16,6 +16,7 @@ imports:
     - { resource: "./../../src/Component/Core/Settlement/Resources/config.yaml" }
     - { resource: "./../../src/Component/Messaging/Resources/config.yaml" }
     - { resource: "./../../src/Component/Override/Resources/config.yaml" }
+    - { resource: "@SyliusPayPalPlugin/Resources/config/config.yaml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'

@@ -1,0 +1,4 @@
+BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Form\Type\WorldLineGatewayConfigurationType:
+  tags:
+    - { name: sylius.gateway_configuration_type, type: worldline_payment, label: 'Worldline Payment' }
+    - { name: form.type }
