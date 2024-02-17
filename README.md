@@ -34,6 +34,12 @@ To create an admin user use following command:
     bin/console sylius:install:setup
 </pre>
 
+Paypal installation. Use the official tutorial except last step:
+https://github.com/Sylius/PayPalPlugin/blob/1.5/docs/installation.md
+<pre>
+    bin/console doctrine:migrations:execute --up 'Sylius\PayPalPlugin\Migrations\Version20200907102535'
+</pre>
+
 For the creation of a custom model, you have to use SymfonyMakerBundle. Since it has conflicts with php8 use following command to install:
 <pre>composer require symfony/maker-bundle --dev --ignore-platform-req=php -W</pre>
 
