@@ -8,10 +8,60 @@
             <tag name="payum.gateway_factory_builder" factory="worldline_payment" />
         </service>
 
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\AuthorizeAction" public="true">
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.authorize" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\CancelAction" public="true">
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.cancel" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\CaptureAction" public="true">
+            <argument type="service" id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Api\CreateOrderApiInterface" />
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.capture" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\NotifyAction" public="true">
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.notify" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\RefundAction" public="true">
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.refund" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\StatusAction" public="true">
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.status" />
+        </service>
+
+        <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\ConvertPaymentAction" public="true">
+            <tag name="payum.action" factory="worldline_payment" alias="payum.action.convertPayment" />
+        </service>
+
         <service id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Form\Type\WorldLineGatewayConfigurationType">
             <tag name="sylius.gateway_configuration_type" type="worldline_payment" label="Wordline Payment" />
             <tag name="form.type" />
         </service>
+
+        <service
+                id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Api\CreateOrderApiInterface"
+                class="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Api\CreateOrderApi"
+        >
+            <argument type="service" id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Client\WorldLineClientInterface" />
+        </service>
+
+        <service
+                id="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Client\WorldLineClientInterface"
+                class="BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Client\WorldLineClient"
+        >
+            <argument type="service" id="sylius.http_client" />
+            <argument type="service" id="monolog.logger.paypal" />
+            <argument type="service" id="sylius.context.channel" />
+        </service>
+
+        <service id="Sylius\PayPalPlugin\Payum\Action\ResolveNextRouteAction" public="true">
+            <tag name="payum.action" factory="sylius.pay_pal" alias="sylius.resolve_next_route" />
+        </service>
+
 
     </services>
 </container>

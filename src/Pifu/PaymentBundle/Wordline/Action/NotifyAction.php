@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action;
 
 use Payum\Core\Action\ActionInterface;

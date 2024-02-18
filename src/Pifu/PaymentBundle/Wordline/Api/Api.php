@@ -1,5 +1,5 @@
 <?php
-namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline;
+namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Api;
 
 use Http\Message\MessageFactory;
 use Payum\Core\Exception\Http\HttpException;

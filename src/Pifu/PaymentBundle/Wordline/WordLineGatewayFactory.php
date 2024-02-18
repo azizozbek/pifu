@@ -1,13 +1,9 @@
 <?php
+declare(strict_types=1);
 namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline;
 
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\AuthorizeAction;
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\CancelAction;
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\ConvertPaymentAction;
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\CaptureAction;
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\NotifyAction;
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\RefundAction;
-use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action\StatusAction;
+use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Api\Api;
+use BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Api\WorldlineApi;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
 
@@ -21,17 +17,10 @@ class WordLineGatewayFactory extends GatewayFactory
         $config->defaults([
             'pifu.factory_name' => 'worldline_payment',
             'pifu.factory_title' => 'worldline',
-            'pifu.action.capture' => new CaptureAction(),
-            'pifu.action.authorize' => new AuthorizeAction(),
-            'pifu.action.refund' => new RefundAction(),
-            'pifu.action.cancel' => new CancelAction(),
-            'pifu.action.notify' => new NotifyAction(),
-            'pifu.action.status' => new StatusAction(),
-            'pifu.action.convert_payment' => new ConvertPaymentAction(),
         ]);
 
         $config['payum.api'] = function (ArrayObject $config) {
-            return new WorldlineToken($config['token']);
+            return new WorldlineApi($config['api_key'], $config['api_secret'], $config['merchant_id']);
         };
 
 

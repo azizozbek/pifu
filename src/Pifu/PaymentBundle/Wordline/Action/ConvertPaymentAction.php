@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action;
 
 use Payum\Core\Action\ActionInterface;
@@ -22,8 +25,8 @@ class ConvertPaymentAction implements ActionInterface
 
         /** @var PaymentInterface $payment */
         $payment = $request->getSource();
-
-        throw new \LogicException('Not implemented');
+        $request->setResult($payment->getDetails());
+        return;
     }
 
     /**

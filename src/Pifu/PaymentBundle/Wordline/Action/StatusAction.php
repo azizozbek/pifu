@@ -1,13 +1,23 @@
 <?php
+
+declare(strict_types=1);
+
 namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Wordline\Action;
 
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\Request\GetStatusInterface;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\Exception\RequestNotSupportedException;
+use Sylius\Component\Core\Model\PaymentInterface;
 
 class StatusAction implements ActionInterface
 {
+    public const STATUS_NEW = 'new';
+    public const STATUS_CAPTURED = 'CAPTURED';
+    public const STATUS_CREATED = 'CREATED';
+    public const STATUS_COMPLETED = 'COMPLETED';
+    public const STATUS_PROCESSING = 'PROCESSING';
+
     /**
      * {@inheritDoc}
      *
@@ -17,9 +27,28 @@ class StatusAction implements ActionInterface
     {
         RequestNotSupportedException::assertSupports($this, $request);
 
-        $model = ArrayObject::ensureArrayObject($request->getModel());
+        /** @var PaymentInterface $payment */
+        $payment = $request->getFirstModel();
 
-        throw new \LogicException('Not implemented');
+        if ($payment->getState() === self::STATUS_CREATED || $payment->getState() === self::STATUS_NEW) {
+            $request->markNew();
+
+            return;
+        }
+
+        if ($payment->getState() === self::STATUS_CAPTURED) {
+            $request->markPending();
+
+            return;
+        }
+
+        if ($payment->getState() === self::STATUS_COMPLETED) {
+            $request->markCaptured();
+
+            return;
+        }
+
+        $request->markFailed();
     }
 
     /**
