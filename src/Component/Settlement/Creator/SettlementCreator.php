@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\OpenMarketplace\Component\Settlement\Creator;
 
-use BitBag\OpenMarketplace\Component\Order\Repository\OrderRepositoryInterface;
+use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use BitBag\OpenMarketplace\Component\Settlement\Entity\SettlementInterface;
 use BitBag\OpenMarketplace\Component\Settlement\Factory\SettlementFactoryInterface;
 use BitBag\OpenMarketplace\Component\Settlement\PeriodStrategy\SettlementPeriodResolverInterface;

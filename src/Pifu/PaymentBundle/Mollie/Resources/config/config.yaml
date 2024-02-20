@@ -1,0 +1,57 @@
+sylius_payum:
+    resources:
+        gateway_config:
+          classes:
+              model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\GatewayConfig
+
+sylius_product:
+  resources:
+    product:
+      classes:
+        model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\Product
+        interface: BitBag\OpenMarketplace\Component\Product\Entity\ProductInterface
+        repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductRepository
+    product_variant:
+      classes:
+        model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\ProductVariant
+        repository: SyliusMolliePlugin\Repository\ProductVariantRepository
+
+sylius_user:
+  resources:
+    admin:
+      user:
+        classes:
+          model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\AdminUser
+    shop:
+      user:
+        classes:
+          model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\ShopUser
+          interface: BitBag\OpenMarketplace\Component\Vendor\Entity\ShopUserInterface
+
+sylius_order:
+  resources:
+    order:
+      classes:
+        model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\Order
+        controller: BitBag\OpenMarketplace\Component\Core\Common\Controller\Resource\OrderController
+        repository: BitBag\OpenMarketplace\Component\Order\Repository\OrderRepository
+        form: Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType\OrderType
+    order_item:
+      classes:
+        model: BitBag\OpenMarketplace\Component\Order\Entity\OrderItem
+
+
+sylius_customer:
+    resources:
+        customer:
+            classes:
+                repository: SyliusMolliePlugin\Repository\CustomerRepository
+
+
+winzou_state_machine:
+  sylius_order_checkout:
+    transitions:
+      complete:
+        from: [cart, addressed, shipping_selected, shipping_skipped, payment_selected, payment_skipped]
+        to: completed
+

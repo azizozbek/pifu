@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\OpenMarketplace\Component\Core\Settlement\Twig\Extension;
 
-use BitBag\OpenMarketplace\Component\Order\Repository\OrderRepositoryInterface;
+use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use BitBag\OpenMarketplace\Component\Settlement\Entity\SettlementInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;

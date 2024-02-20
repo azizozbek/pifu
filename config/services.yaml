@@ -17,4 +17,4 @@ imports:
     - { resource: "../src/Component/ProductListing/Resources/services.xml" }
     - { resource: "../src/Component/Vendor/Resources/services.xml" }
     - { resource: "../src/Component/Settlement/Resources/services.xml" }
-    - { resource: "../src/Pifu/PaymentBundle/Resources/config/services.xml" }
+    - { resource: "../src/Pifu/PaymentBundle/Wordline/Resources/config/services.xml" }

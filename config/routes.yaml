@@ -22,3 +22,6 @@ bitbag_sylius_wishlist_plugin:
 
 sylius_paypal_webhook:
     resource: "@SyliusPayPalPlugin/Resources/config/webhook_routing.yaml"
+
+sylius_mollie_plugin:
+    resource: "@SyliusMolliePlugin/Resources/config/routing.yaml"

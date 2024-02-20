@@ -17,44 +17,47 @@ imports:
     - { resource: "./../../src/Component/Messaging/Resources/config.yaml" }
     - { resource: "./../../src/Component/Override/Resources/config.yaml" }
     - { resource: "@SyliusPayPalPlugin/Resources/config/config.yaml" }
+    - { resource: "./../../src/Pifu/PaymentBundle/Mollie/Resources/config/config.yaml" }
+    - { resource: "@SyliusMolliePlugin/Resources/config/config.yaml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
+    images_dir: "%kernel.project_dir%/public/media/image/"
 
 sylius_shop:
     product_grid:
         include_all_descendants: true
 
-sylius_order:
-    resources:
-        order:
-            classes:
-                model: BitBag\OpenMarketplace\Component\Order\Entity\Order
-                controller: BitBag\OpenMarketplace\Component\Core\Common\Controller\Resource\OrderController
-                repository: BitBag\OpenMarketplace\Component\Order\Repository\OrderRepository
-                form: Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType\OrderType
-        order_item:
-            classes:
-                model: BitBag\OpenMarketplace\Component\Order\Entity\OrderItem
+#sylius_order:
+#    resources:
+#        order:
+#            classes:
+#                model: BitBag\OpenMarketplace\Component\Order\Entity\Order
+#                controller: BitBag\OpenMarketplace\Component\Core\Common\Controller\Resource\OrderController
+#                repository: BitBag\OpenMarketplace\Component\Order\Repository\OrderRepository
+#                form: Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType\OrderType
+#        order_item:
+#            classes:
+#                model: BitBag\OpenMarketplace\Component\Order\Entity\OrderItem
 
-sylius_product:
-    resources:
-        product:
-            classes:
-                model: BitBag\OpenMarketplace\Component\Product\Entity\Product
-                interface: BitBag\OpenMarketplace\Component\Product\Entity\ProductInterface
-                repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductRepository
-        product_variant:
-            classes:
-                repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductVariantRepository
+#sylius_product:
+#    resources:
+#        product:
+#            classes:
+#                model: BitBag\OpenMarketplace\Component\Product\Entity\Product
+#                interface: BitBag\OpenMarketplace\Component\Product\Entity\ProductInterface
+#                repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductRepository
+#        product_variant:
+#            classes:
+#                repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductVariantRepository
 
-sylius_user:
-    resources:
-        shop:
-            user:
-                classes:
-                    model: BitBag\OpenMarketplace\Component\Vendor\Entity\ShopUser
-                    interface: BitBag\OpenMarketplace\Component\Vendor\Entity\ShopUserInterface
+#sylius_user:
+#    resources:
+#        shop:
+#            user:
+#                classes:
+#                    model: BitBag\OpenMarketplace\Component\Vendor\Entity\ShopUser
+#                    interface: BitBag\OpenMarketplace\Component\Vendor\Entity\ShopUserInterface
 
 sylius_shipping:
     resources:
@@ -70,11 +73,11 @@ sylius_payment:
             classes:
                 repository: BitBag\OpenMarketplace\Component\Order\Repository\PaymentRepository
 
-sylius_customer:
-    resources:
-        customer:
-            classes:
-                repository: BitBag\OpenMarketplace\Component\Vendor\Repository\CustomerRepository
+#sylius_customer:
+#    resources:
+#        customer:
+#            classes:
+#                repository: BitBag\OpenMarketplace\Component\Vendor\Repository\CustomerRepository
 
 sylius_review:
     resources:

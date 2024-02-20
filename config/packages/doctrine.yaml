@@ -48,3 +48,9 @@ doctrine:
                 type: xml
                 dir: '%kernel.project_dir%/src/Component/Settlement/Resources/doctrine'
                 prefix: 'BitBag\OpenMarketplace\Component\Settlement\Entity'
+            PaymentBundle:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Pifu/PaymentBundle/Mollie/Resources/doctrine'
+                prefix: 'BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment'
+

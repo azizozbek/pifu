@@ -1,7 +1,9 @@
 const path = require('path');
 const Encore = require('@symfony/webpack-encore');
 
+// eslint-disable-next-line import/extensions
 const [bitbagCmsShop, bitbagCmsAdmin] = require('./vendor/bitbag/cms-plugin/webpack.config.js');
+// eslint-disable-next-line import/extensions
 const [bitbagWishlistShop, bitbagWishlistAdmin] = require('./vendor/bitbag/wishlist-plugin/webpack.config.js');
 
 const syliusBundles = path.resolve(__dirname, 'vendor/sylius/sylius/src/Sylius/Bundle/');
@@ -13,6 +15,7 @@ Encore
   .setOutputPath('public/build/shop/')
   .setPublicPath('/build/shop')
   .addEntry('shop-entry', './assets/shop/entry.js')
+  .addEntry('mollie-shop-entry', './vendor/mollie/sylius-plugin/src/Resources/assets/shop/entry.js')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .copyFiles({
@@ -39,6 +42,7 @@ Encore
   .setOutputPath('public/build/admin/')
   .setPublicPath('/build/admin')
   .addEntry('admin-entry', './assets/admin/entry.js')
+  .addEntry('mollie-admin-entry', './vendor/mollie/sylius-plugin/src/Resources/assets/admin/entry.js')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
