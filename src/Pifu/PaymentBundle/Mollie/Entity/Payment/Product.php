@@ -7,7 +7,7 @@ namespace BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment;
 
 use Doctrine\ORM\Mapping as ORM;
 use SyliusMolliePlugin\Entity\ProductInterface;
-use SyliusMolliePlugin\Entity\ProductTrait;
+use BitBag\OpenMarketplace\Component\Product\Model\ProductTrait;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 
 class Product extends BaseProduct implements ProductInterface

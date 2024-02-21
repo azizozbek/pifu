@@ -79,7 +79,7 @@ final class OrderController extends BaseOrderController
 
         $this->isGrantedOr403($configuration, ResourceActions::UPDATE);
         $resource = $this->findOr404($configuration);
-
+        $tokenValue = $request->get('tokenValue');
         $form = $this->resourceFormFactory->create($configuration, $resource);
         $form->handleRequest($request);
 

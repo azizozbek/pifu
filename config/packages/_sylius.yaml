@@ -28,17 +28,17 @@ sylius_shop:
     product_grid:
         include_all_descendants: true
 
-#sylius_order:
-#    resources:
-#        order:
-#            classes:
-#                model: BitBag\OpenMarketplace\Component\Order\Entity\Order
-#                controller: BitBag\OpenMarketplace\Component\Core\Common\Controller\Resource\OrderController
-#                repository: BitBag\OpenMarketplace\Component\Order\Repository\OrderRepository
-#                form: Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType\OrderType
-#        order_item:
-#            classes:
-#                model: BitBag\OpenMarketplace\Component\Order\Entity\OrderItem
+sylius_order:
+    resources:
+        order:
+            classes:
+                model: BitBag\OpenMarketplace\Component\Order\Entity\Order
+                controller: BitBag\OpenMarketplace\Component\Core\Common\Controller\Resource\OrderController
+                repository: BitBag\OpenMarketplace\Component\Order\Repository\OrderRepository
+                form: Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType\OrderType
+        order_item:
+            classes:
+                model: BitBag\OpenMarketplace\Component\Order\Entity\OrderItem
 
 #sylius_product:
 #    resources:

@@ -14,12 +14,15 @@ use BitBag\OpenMarketplace\Component\ProductListing\Entity\DraftInterface;
 use BitBag\OpenMarketplace\Component\Vendor\Entity\VendorInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use SyliusMolliePlugin\Entity\ProductTypeInterface;
 
 trait ProductTrait
 {
     protected ?VendorInterface $vendor = null;
 
     protected bool $deleted = false;
+    /** @var ProductTypeInterface */
+    protected $productType;
 
     public function isDeleted(): bool
     {
@@ -60,4 +63,15 @@ trait ProductTrait
     {
         $this->channels = $channels;
     }
+
+    public function getProductType(): ?ProductTypeInterface
+    {
+        return $this->productType;
+    }
+
+    public function setProductType(?ProductTypeInterface $productType): void
+    {
+        $this->productType = $productType;
+    }
+
 }
