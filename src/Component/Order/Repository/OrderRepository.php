@@ -19,8 +19,8 @@ use Sylius\Bundle\CoreBundle\Doctrine\ORM\OrderRepository as BaseOrderRepository
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\OrderPaymentStates;
 use Sylius\Component\Order\Model\OrderInterface as OrderInterfaceAlias;
-
-class OrderRepository extends BaseOrderRepository implements OrderRepositoryInterface
+use SyliusMolliePlugin\Repository\OrderRepositoryInterface as MollieOrderRepositoryInterface;
+class OrderRepository extends BaseOrderRepository implements OrderRepositoryInterface, MollieOrderRepositoryInterface
 {
     public function findAllByVendorQueryBuilder(VendorInterface $vendor): QueryBuilder
     {
@@ -232,4 +232,22 @@ class OrderRepository extends BaseOrderRepository implements OrderRepositoryInte
             ->getSingleScalarResult()
             ;
     }
+
+    public function findAbandonedByDateTime(\DateTime $dateTime): array
+    {
+        return $this->createQueryBuilder('o')
+            ->where('o.paymentState = :paymentState')
+            ->andWhere('o.state = :state')
+            ->andWhere('o.createdAt <= :createdAt')
+            ->andWhere('o.abandonedEmail = :abandonedEmail')
+            ->setParameter('state', \Sylius\Component\Core\Model\OrderInterface::STATE_NEW)
+            ->setParameter('paymentState', OrderPaymentStates::STATE_AWAITING_PAYMENT)
+            ->setParameter('createdAt', $dateTime)
+            ->setParameter('abandonedEmail', false)
+            ->setMaxResults(20)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 }

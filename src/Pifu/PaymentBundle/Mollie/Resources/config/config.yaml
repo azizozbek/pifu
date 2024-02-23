@@ -1,0 +1,12 @@
+sylius_payum:
+    resources:
+        gateway_config:
+          classes:
+              model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Payment\GatewayConfig
+
+winzou_state_machine:
+  sylius_order_checkout:
+    transitions:
+      complete:
+        from: [cart, addressed, shipping_selected, shipping_skipped, payment_selected, payment_skipped]
+        to: completed

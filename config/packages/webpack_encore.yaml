@@ -7,3 +7,11 @@ webpack_encore:
         cms_admin: '%kernel.project_dir%/public/build/bitbag/cms/admin'
         wishlist_shop: '%kernel.project_dir%/public/build/bitbag/wishlist/shop'
         wishlist_admin: '%kernel.project_dir%/public/build/bitbag/wishlist/admin'
+        mollie-admin: "%kernel.project_dir%/public/build/admin"
+        mollie-shop: "%kernel.project_dir%/public/build/shop"
+    script_attributes:
+        defer: false
+
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/build/admin/manifest.json'
