@@ -319,6 +319,9 @@
     "sylius/mailer-bundle": {
         "version": "v1.8.1"
     },
+    "sylius/paypal-plugin": {
+        "version": "v1.5.0"
+    },
     "sylius/refund-plugin": {
         "version": "1.4",
         "recipe": {
@@ -397,6 +400,18 @@
             "public/index.php",
             "src/Controller/.gitignore",
             "src/Kernel.php"
+        ]
+    },
+    "symfony/mailer": {
+        "version": "6.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.3",
+            "ref": "df66ee1f226c46f01e85c29c2f7acce0596ba35a"
+        },
+        "files": [
+            "config/packages/mailer.yaml"
         ]
     },
     "symfony/messenger": {

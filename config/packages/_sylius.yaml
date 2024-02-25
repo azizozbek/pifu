@@ -18,6 +18,7 @@ imports:
     - { resource: "./../../src/Component/Override/Resources/config.yaml" }
     - { resource: "@SyliusMolliePlugin/Resources/config/config.yaml" }
     - { resource: "./../../src/Pifu/PaymentBundle/Mollie/Resources/config/config.yaml" }
+    - { resource: "@SyliusPayPalPlugin/Resources/config/config.yaml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'

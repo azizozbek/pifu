@@ -11,6 +11,7 @@
         "mollie/sylius-plugin": "^5.2",
         "php-http/message-factory": "^1.1",
         "ramsey/uuid-doctrine": "^1.8",
+        "sylius/paypal-plugin": "*",
         "sylius/refund-plugin": "^1.4",
         "sylius/sylius": "^1.11.12",
         "symfony/dotenv": "^4.4 || ^5.2",

@@ -68,4 +68,5 @@ return [
     FOS\JsRoutingBundle\FOSJsRoutingBundle::class => ['all' => true],
     Sylius\AdminOrderCreationPlugin\SyliusAdminOrderCreationPlugin::class => ['all' => true],
     SyliusMolliePlugin\SyliusMolliePlugin::class => ['all' => true],
+    Sylius\PayPalPlugin\SyliusPayPalPlugin::class => ['all' => true],
 ];

@@ -14,10 +14,13 @@ namespace BitBag\OpenMarketplace\Component\Product\Entity;
 use BitBag\OpenMarketplace\Component\Product\Model\ProductTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Product as BaseProduct;
+use SyliusMolliePlugin\Entity\ProductInterface as MollieProductInterface;
+use SyliusMolliePlugin\Entity\ProductTrait as MollieProductTrait;
 
-class Product extends BaseProduct implements ProductInterface
+class Product extends BaseProduct implements ProductInterface, MollieProductInterface
 {
     use ProductTrait;
+    use MollieProductTrait;
     /**
      * @ORM\ManyToOne(targetEntity="SyliusMolliePlugin\Entity\ProductType")
      * @ORM\JoinColumn(name="product_type_id", fieldName="productType", onDelete="SET NULL")
