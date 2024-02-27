@@ -97,6 +97,18 @@
             "ref": "f5ad42002183a6881962683e6d84bbb25cdfce5d"
         }
     },
+    "friendsofsymfony/jsrouting-bundle": {
+        "version": "3.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "2.3",
+            "ref": "a9f2e49180f75cdc71ae279a929c4b2e0638de84"
+        },
+        "files": [
+            "config/routes/fos_js_routing.yaml"
+        ]
+    },
     "friendsofsymfony/oauth-server-bundle": {
         "version": "2.0",
         "recipe": {
@@ -129,6 +141,18 @@
     },
     "knplabs/knp-menu-bundle": {
         "version": "v3.2.0"
+    },
+    "knplabs/knp-snappy-bundle": {
+        "version": "1.9",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.5",
+            "ref": "c81bdcf4a9d4e7b1959071457f9608631865d381"
+        },
+        "files": [
+            "config/packages/knp_snappy.yaml"
+        ]
     },
     "league/flysystem-bundle": {
         "version": "2.4",
@@ -163,6 +187,9 @@
             "version": "1.8",
             "ref": "d1227d002b70d1a1f941d91845fcd7ac7fbfc929"
         }
+    },
+    "mollie/sylius-plugin": {
+        "version": "v5.3.0"
     },
     "nelmio/alice": {
         "version": "3.10",
@@ -238,6 +265,15 @@
             "ref": "b4edd2a1e6ac1827202f336cac2771cb529de542"
         }
     },
+    "sonata-project/doctrine-extensions": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.8",
+            "ref": "4ea4a4b6730f83239608d7d4c849533645c70169"
+        }
+    },
     "sonata-project/form-extensions": {
         "version": "1.18",
         "recipe": {
@@ -268,6 +304,19 @@
     "sylius-labs/doctrine-migrations-extra-bundle": {
         "version": "v0.1.4"
     },
+    "sylius/admin-order-creation-plugin": {
+        "version": "0.14",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "0.6",
+            "ref": "3ac19aedc8c846cc48cc61ee62ab5b280823efbf"
+        },
+        "files": [
+            "config/packages/sylius_admin_order_creation.yaml",
+            "config/routes/sylius_admin_order_creation.yaml"
+        ]
+    },
     "sylius/calendar": {
         "version": "v0.3.0"
     },
@@ -279,6 +328,19 @@
     },
     "sylius/mailer-bundle": {
         "version": "v1.8.1"
+    },
+    "sylius/refund-plugin": {
+        "version": "1.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "0.4",
+            "ref": "a3f813f608c6f04bd7d0b4cefd73a96bf378c390"
+        },
+        "files": [
+            "config/packages/sylius_refund.yaml",
+            "config/routes/sylius_refund.yaml"
+        ]
     },
     "sylius/resource-bundle": {
         "version": "1.10",
@@ -495,6 +557,18 @@
             "version": "2.0",
             "ref": "34df072c6edaa61ae19afb2f3a239f272fecab87"
         }
+    },
+    "willdurand/js-translation-bundle": {
+        "version": "5.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.0",
+            "ref": "02b720a49f6d36b44d557e0b18e48bf09e0a8e07"
+        },
+        "files": [
+            "config/routes/js_translation.yaml"
+        ]
     },
     "winzou/state-machine-bundle": {
         "version": "0.6.0"

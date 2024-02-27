@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace BitBag\OpenMarketplace\Component\Product\Factory;
 
 use Sylius\Component\Core\Model\ProductInterface;
-use Sylius\Component\Core\Model\ProductVariant;
+use BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\ProductVariant;
 
 final class ProductVariantFactory implements ProductVariantFactoryInterface
 {

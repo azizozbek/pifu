@@ -15,9 +15,12 @@ imports:
     - { resource: "./../../src/Component/Core/Vendor/Resources/config.yaml" }
     - { resource: "./../../src/Component/Messaging/Resources/config.yaml" }
     - { resource: "./../../src/Component/Override/Resources/config.yaml" }
+    - { resource: "@SyliusMolliePlugin/Resources/config/config.yaml" }
+    - { resource: "./../../src/Pifu/PaymentBundle/Mollie/Resources/config/config.yaml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
+    images_dir: 'media/image/'
 
 sylius_core:
     filesystem:
@@ -43,12 +46,13 @@ sylius_product:
     resources:
         product:
             classes:
-                model: BitBag\OpenMarketplace\Component\Product\Entity\Product
+                model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\Product
                 interface: BitBag\OpenMarketplace\Component\Product\Entity\ProductInterface
                 repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductRepository
         product_variant:
             classes:
-                repository: BitBag\OpenMarketplace\Component\Product\Repository\ProductVariantRepository
+                model: BitBag\OpenMarketplace\Pifu\PaymentBundle\Mollie\Entity\ProductVariant
+                repository: SyliusMolliePlugin\Repository\ProductVariantRepository
 
 sylius_user:
     resources:

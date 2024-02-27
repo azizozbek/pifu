@@ -1,15 +1,23 @@
 {
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bazinga-translator": "^6.0.0",
     "chart.js": "^3.7.1",
+    "intl-messageformat": "^10.5.11",
     "jquery": "^3.5.0",
     "jquery.dirtyforms": "^2.0.0",
     "lightbox2": "^2.9.0",
+    "lodash.get": "^4.4.2",
     "semantic-ui-css": "^2.2.0",
-    "slick-carousel": "^1.8.1"
+    "shepherd.js": "11.0",
+    "slick-carousel": "^1.8.1",
+    "webpack-notifier": "^1.15.0"
   },
   "devDependencies": {
-    "@symfony/webpack-encore": "^1.7.0",
+    "@babel/core": "7.16.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.16.5",
+    "@babel/register": "7.16.0",
+    "@symfony/webpack-encore": "1.5.0",
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-module-resolver": "^3.1.1",
@@ -24,7 +32,7 @@
     "fast-async": "^6.3.7",
     "file-loader": "^6.0.0",
     "merge-stream": "^1.0.0",
-    "node-sass": "^4.14",
+    "sass": "^1.71.1",
     "sass-loader": "^7.0.1",
     "upath": "^1.1.0",
     "yargs": "^6.4.0"
