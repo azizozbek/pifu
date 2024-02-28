@@ -11,5 +11,9 @@
         <many-to-one field="vendor" target-entity="BitBag\OpenMarketplace\Component\Vendor\Entity\VendorInterface" inversed-by="products">
             <join-column name="vendor_id" on-delete="CASCADE"/>
         </many-to-one>
+
+        <many-to-one field="productType" target-entity="SyliusMolliePlugin\Entity\ProductType">
+            <join-column name="product_type_id" on-delete="SET NULL"/>
+        </many-to-one>
     </mapped-superclass>
 </doctrine-mapping>
